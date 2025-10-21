@@ -44,7 +44,9 @@ def set_sidebar_style():
             outline: none;
             transition: all .17s;
             text-align: left !important;
-            justify-content: flex-start;
+            justify-content: flex-start !important;
+            display: flex !important;
+            align-items: center !important;
         }
         .custom-page-btn.selected {
             border: 2px solid #8bb1f3 !important;
