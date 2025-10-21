@@ -6,37 +6,108 @@ import numpy as np
 st.set_page_config(layout="wide")
 
 # ---------- Custom Sidebar CSS/Navigation ----------
-with st.sidebar:
-    st.markdown("## Sorting Algorithm Interpreter Project")
-    st.write("Pages")
-    # Navigation buttons
+def set_sidebar_style():
+    st.markdown("""
+        <style>
+        .custom-sidebar-title {
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-bottom: .3em;
+            text-align: left;
+        }
+        .custom-sidebar-section {
+            margin-bottom: 1.2em;
+            text-align: left;
+        }
+        .custom-pages-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            margin-bottom: 1.2em;
+            align-items: flex-start;
+        }
+        .css-1e5imcs, .css-q8sbsg {
+            width: 100% !important;
+            text-align: left !important;
+        }
+        .custom-page-btn {
+            width: 100% !important;
+            border: 1.5px solid #444857 !important;
+            border-radius: 8px;
+            padding: .43em 0 .43em 0;
+            background: none;
+            color: #e3e6f3 !important;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.33em !important;
+            box-shadow: none;
+            outline: none;
+            transition: all .17s;
+            text-align: left !important;
+            justify-content: flex-start !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+        .custom-page-btn.selected {
+            border: 2px solid #8bb1f3 !important;
+            background: #23253a33 !important;
+            color: #bcdbf7 !important;
+            text-align: left !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+
+def sidebar_navigation():
+    set_sidebar_style()
+    st.markdown('<div class="custom-sidebar-title">Sorting Algorithm Interpreter Project</div>', unsafe_allow_html=True)
+    st.markdown('<div class="custom-sidebar-section"></div>', unsafe_allow_html=True)
+    st.markdown('<div class="custom-sidebar-section">Pages</div>', unsafe_allow_html=True)
     if "page" not in st.session_state:
-        st.session_state.page = "Home Page"
-    if st.button("Home Page"):
-        st.session_state.page = "Home Page"
-    if st.button("Sorting Algorithm Interpreter"):
-        st.session_state.page = "Visualization"
-    # Everything below is regular left-aligned Markdown
-    st.markdown("---")
-    st.write("Abstract")
+        st.session_state.page = "Landing Page"
+    nav_items = [
+        ("Landing Page", "Home Page"),
+        ("Visualization", "Sorting Algorithm Interpreter")
+    ]
+    st.markdown('<div class="custom-pages-list">', unsafe_allow_html=True)
+    for key, label in nav_items:
+        btn_type = "custom-page-btn selected" if st.session_state.page == key else "custom-page-btn"
+        if st.button(label, key=f"nav_{key}"):
+            st.session_state.page = key
+        # Style selected after rerun
+        st.markdown(
+            f"""
+            <style>
+            div[data-testid="stVerticalBlock"] > div:has(> button[kind="secondary"]):nth-child({nav_items.index((key, label)) + 1})>button {{
+                {"border: 2px solid #8bb1f3 !important; background: #23253a33 !important; color: #bcdbf7 !important;" if st.session_state.page == key else ""}
+            }}
+            </style>
+            """, unsafe_allow_html=True
+        )
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    st.markdown("---", unsafe_allow_html=True)
+    st.markdown("**Abstract**", unsafe_allow_html=True)
     st.markdown(
-        "A Streamlit dashboard for visually comparing four classic sorting algorithms "
-        "(Bubble, Insertion, Quick, Merge) using a custom interpreter engine with live step-by-step output."
+        "A Streamlit dashboard for visually comparing four classic sorting algorithms (Bubble, Insertion, Quick, Merge) using a custom interpreter engine with live step-by-step output."
     )
-    st.markdown("---")
-    st.write("Links:")
+    st.markdown("---", unsafe_allow_html=True)
+    st.markdown("**Links:**", unsafe_allow_html=True)
     st.markdown(
-        "[Github Repository](https://github.com/Miguel-Lopez-06/Sorting-Algorithm-Project.git)"
+        "<span style='font-size:16px;'></span> [Github Repository](https://github.com/Miguel-Lopez-06/Sorting-Algorithm-Project.git)", unsafe_allow_html=True
     )
     st.markdown(
-        "[Google Colab Notebook](https://colab.research.google.com/drive/1ILGTrV-2Jzcif9-kHgX4eCTh-5_5kPhB?usp=sharing)"
+        "<span style='font-size:16px; color:green;'></span> [Google Colab Notebook](https://colab.research.google.com/drive/1ILGTrV-2Jzcif9-kHgX4eCTh-5_5kPhB?usp=sharing)", unsafe_allow_html=True
     )
-    st.markdown("---")
-    st.write("Group: Torpezoids")
-    st.write("Members:")
-    st.write("Contributor 1")
-    st.write("Contributor 2")
-    st.write("Contributor 3")
+
+    st.markdown("---", unsafe_allow_html=True)
+    st.markdown("**Group: Torpezoids**")
+    st.markdown("**Members:**")
+    st.markdown("- Contributor 1  \n- Contributor 2  \n- Contributor 3")
+    return st.session_state.page
+
+with st.sidebar:
+    selected = sidebar_navigation()
 
 # ---------- Sorting/Visualization Functions ----------
 def get_color_dict(values):
