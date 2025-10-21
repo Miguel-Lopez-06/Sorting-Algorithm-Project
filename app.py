@@ -85,7 +85,7 @@ def sidebar_navigation():
     st.markdown("---", unsafe_allow_html=True)
     st.markdown("**Links:**", unsafe_allow_html=True)
     st.markdown(
-        "<span style='font-size:16px;'></span> [Github Repository](#)", unsafe_allow_html=True
+        "<span style='font-size:16px;'></span> [Github Repository](https://github.com/Miguel-Lopez-06/Sorting-Algorithm-Project.git)", unsafe_allow_html=True
     )
     st.markdown(
         "<span style='font-size:16px; color:green;'></span> [Google Colab Notebook](https://colab.research.google.com/drive/1ILGTrV-2Jzcif9-kHgX4eCTh-5_5kPhB?usp=sharing)", unsafe_allow_html=True
