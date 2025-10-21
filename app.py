@@ -25,7 +25,7 @@ def set_sidebar_style():
         }
         .css-1e5imcs, .css-q8sbsg {
             width: 100% !important;
-            text-align: center !important;
+            text-align: left !important;
         }
         .custom-page-btn {
             width: 100% !important;
