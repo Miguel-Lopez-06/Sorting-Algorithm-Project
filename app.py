@@ -5,16 +5,44 @@ import numpy as np
 st.set_page_config(layout="wide")
 
 # --- Sidebar Layout (pure Streamlit, left-aligned) ---
+st.markdown("""
+    <style>
+    .nav-button-uniform button {
+        width: 100% !important;
+        min-width: 210px !important;
+        max-width: 210px !important;
+        margin-bottom: 12px !important;
+        border-radius: 10px !important;
+        border: 1.5px solid #444857 !important;
+        font-weight: 500 !important;
+        font-size: 1rem !important;
+        text-align: center !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding-top: 0.5em !important;
+        padding-bottom: 0.5em !important;
+        background: none !important;
+        color: #e3e6f3 !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        display: flex !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# --- Sidebar Layout (left-aligned and uniform width) ---
 with st.sidebar:
     st.markdown("## Sorting Algorithm Interpreter Project")
     st.write("Pages")
-    # Navigation state with pure Streamlit
     if "page" not in st.session_state:
         st.session_state.page = "Home Page"
-    if st.button("Home Page"):
-        st.session_state.page = "Home Page"
-    if st.button("Sorting Algorithm Interpreter"):
-        st.session_state.page = "Visualization"
+    # Uniform width nav buttons (with Streamlit 1.23+)
+    col = st.container()
+    with col:
+        if st.button("Home Page", key="home", help=None, type="secondary", use_container_width=True):
+            st.session_state.page = "Home Page"
+        if st.button("Sorting Algorithm Interpreter", key="viz", help=None, type="secondary", use_container_width=True):
+            st.session_state.page = "Visualization"
     st.markdown("---")
     st.write("Abstract")
     st.markdown(
