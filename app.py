@@ -13,15 +13,18 @@ def set_sidebar_style():
             font-weight: 600;
             font-size: 1.5rem;
             margin-bottom: .3em;
+            text-align: left;
         }
         .custom-sidebar-section {
             margin-bottom: 1.2em;
+            text-align: left;
         }
         .custom-pages-list {
             display: flex;
             flex-direction: column;
             gap: 0.5em;
             margin-bottom: 1.2em;
+            align-items: flex-start;
         }
         .css-1e5imcs, .css-q8sbsg {
             width: 100% !important;
@@ -40,14 +43,18 @@ def set_sidebar_style():
             box-shadow: none;
             outline: none;
             transition: all .17s;
+            text-align: left !important;
+            justify-content: flex-start;
         }
         .custom-page-btn.selected {
             border: 2px solid #8bb1f3 !important;
             background: #23253a33 !important;
             color: #bcdbf7 !important;
+            text-align: left !important;
         }
         </style>
     """, unsafe_allow_html=True)
+
 
 def sidebar_navigation():
     set_sidebar_style()
