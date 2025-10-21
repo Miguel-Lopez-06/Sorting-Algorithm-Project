@@ -66,8 +66,8 @@ def sidebar_navigation():
     if "page" not in st.session_state:
         st.session_state.page = "Landing Page"
     nav_items = [
-        ("Landing Page", "Home Page"),
-        ("Visualization", "Sorting Algorithm Interpreter")
+        ("Landing Page","Home Page"),
+        ("Visualization","Sorting Algorithm Interpreter")
     ]
     st.markdown('<div class="custom-pages-list">', unsafe_allow_html=True)
     for key, label in nav_items:
