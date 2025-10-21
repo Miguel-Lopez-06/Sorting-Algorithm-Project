@@ -11,7 +11,7 @@ with st.sidebar:
     # Navigation state with pure Streamlit
     if "page" not in st.session_state:
         st.session_state.page = "Home Page"
-    if st.button("  -----------Home Page  "):
+    if st.button("Home Page"):
         st.session_state.page = "Home Page"
     if st.button("Sorting Algorithm Interpreter"):
         st.session_state.page = "Visualization"
