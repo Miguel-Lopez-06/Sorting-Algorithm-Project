@@ -208,17 +208,17 @@ if st.session_state.page == "Home Page":
     st.markdown("""
     - **Insertion Sort** builds the sorted array one item at a time by comparing each new element to those already sorted, inserting it in the correct position.
     """)
-    st.image("https://upload.wikimedia.org/wikipedia/commons/7/7e/Insertion-sort-example.gif", caption="Insertion Sort Example", use_column_width=True)
+    st.image("https://upload.wikimedia.org/wikipedia/commons/7/7e/Insertion-sort-example.gif", caption="Insertion Sort Example", use_container_width=True)
     st.subheader("Quick Sort")
-    st.markdown("""
+    st.markdown(""" 
     - **Quick Sort** selects a pivot and partitions the array into two sub-arrays: values less than the pivot and values greater, then recursively sorts the sub-arrays.
     """)
-    st.image("https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif", caption="Quick Sort Example", use_column_width=True)
+    st.image("https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif", caption="Quick Sort Example", use_container_width=True)
     st.subheader("Merge Sort")
     st.markdown("""
     - **Merge Sort** is a divide-and-conquer algorithm: it splits the list into halves, recursively sorts each, and merges them together in order.
     """)
-    st.image("https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif", caption="Merge Sort Example", use_column_width=True)
+    st.image("https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif", caption="Merge Sort Example", use_container_width=True)
 
 elif st.session_state.page == "Visualization":
     st.title("Sorting Algorithm Interpreter — Enhanced Visualizations")
