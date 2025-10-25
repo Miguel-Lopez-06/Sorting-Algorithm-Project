@@ -371,7 +371,7 @@ class Executor:
         st.image("https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif", 
                  caption="Quick Sort", use_container_width=True)
     with col4:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif", 
+        st.image("https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-350px.gif", 
                  caption="Merge Sort", use_container_width=True)
     
     # Section VI
