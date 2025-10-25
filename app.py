@@ -60,9 +60,9 @@ with st.sidebar:
     st.markdown("---")
     st.write("Group: Torpezoids")
     st.write("Members:")
-    st.write("Contributor 1")
-    st.write("Contributor 2")
-    st.write("Contributor 3")
+    st.write("Mirabel, Jan Kristian")
+    st.write("Lopez, Miguel")
+    st.write("Sobrepena, Kim")
 
 # --- Sorting & Visualization Functions ---
 def get_color_dict(values):
