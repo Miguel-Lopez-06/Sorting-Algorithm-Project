@@ -41,6 +41,8 @@ with st.sidebar:
     with col:
         if st.button("Home Page", key="home", help=None, type="secondary", use_container_width=True):
             st.session_state.page = "Home Page"
+        if st.button("Project Details", key="proj", help=None, type="secondary", use_container_width=True):
+            st.session_state.page = "Details"
         if st.button("Sorting Algorithm Interpreter", key="viz", help=None, type="secondary", use_container_width=True):
             st.session_state.page = "Visualization"
     st.markdown("---")
