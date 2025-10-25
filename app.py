@@ -33,6 +33,7 @@ st.markdown("""
 # --- Sidebar Layout (left-aligned and uniform width) ---
 with st.sidebar:
     st.markdown("## Sorting Algorithm Interpreter Project")
+    st.write("")
     st.write("Pages")
     if "page" not in st.session_state:
         st.session_state.page = "Home Page"
