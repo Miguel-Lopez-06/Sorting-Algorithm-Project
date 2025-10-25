@@ -252,8 +252,8 @@ elif st.session_state.page == "Details":
     st.subheader("Grammar")
     st.write("The interpreter processes commands with the following structure:")
     st.code("""
-SORT [array] ALGORITHM BY ORDER
-PRINT
+    SORT [array] ALGORITHM BY ORDER
+    PRINT
         """)
     
     # Section III
