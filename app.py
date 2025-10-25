@@ -232,7 +232,7 @@ elif st.session_state.page == "Details":
     This project implements a Sorting Algorithm Interpreter, which reads user commands related to sorting arrays using different algorithms and executes them immediately. The interpreter demonstrates key programming language principles such as lexical analysis, parsing, and execution.
     """)
     st.image("https://miro.medium.com/v2/resize:fit:1400/1*yqRsMNxVL4OlhH4vNaKlSw.png", 
-             caption="Programming Language Interpreter Flow", use_column_width=True)
+             caption="Programming Language Interpreter Flow", use_container_width=True)
     
     # Section II
     st.header("Section II. Description of the Input Language")
