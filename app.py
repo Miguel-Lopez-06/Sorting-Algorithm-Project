@@ -60,8 +60,8 @@ with st.sidebar:
     st.markdown("---")
     st.write("Group: Torpezoids")
     st.write("Members:")
-    st.write("Mirabel, Jan Kristian")
     st.write("Lopez, Miguel")
+    st.write("Mirabel, Jan Kristian")
     st.write("Sobrepena, Kim")
 
 # --- Sorting & Visualization Functions ---
