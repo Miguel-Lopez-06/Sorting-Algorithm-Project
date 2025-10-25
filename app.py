@@ -226,11 +226,15 @@ if st.session_state.page == "Home Page":
 elif st.session_state.page == "Details":
     st.title("Project Details")
     
+    # Section I
     st.header("Section I. Introduction")
     st.write("""
     This project implements a Sorting Algorithm Interpreter, which reads user commands related to sorting arrays using different algorithms and executes them immediately. The interpreter demonstrates key programming language principles such as lexical analysis, parsing, and execution.
     """)
+    st.image("https://miro.medium.com/v2/resize:fit:1400/1*yqRsMNxVL4OlhH4vNaKlSw.png", 
+             caption="Programming Language Interpreter Flow", use_column_width=True)
     
+    # Section II
     st.header("Section II. Description of the Input Language")
     st.subheader("Tokens")
     st.markdown("""
@@ -241,37 +245,49 @@ elif st.session_state.page == "Details":
     - White spaces are ignored; invalid characters cause errors.
     """)
     
-    st.subheader("Grammar")
-    st.write("The interpreter processes commands with the following structure:")
-    st.code("""
+    col1, col2 = st.columns(2)
+    with col1:
+        st.image("https://media.geeksforgeeks.org/wp-content/uploads/20230706112910/Tokens-in-C.png", 
+                 caption="Lexical Tokens Example", use_column_width=True)
+    with col2:
+        st.subheader("Grammar")
+        st.write("The interpreter processes commands with the following structure:")
+        st.code("""
 SORT [array] ALGORITHM BY ORDER
 PRINT
-    """)
+        """)
     
+    # Section III
     st.header("Section III. System Design")
     st.write("""
     The system design of the Sorting Algorithm Interpreter emphasizes modularity and clarity throughout its structure. The interpreter consists of four primary components: **Lexer**, **Parser**, **Executor**, and an **Integrative Interface**.
+    """)
+    st.image("https://ruslanspivak.com/lsbasi-part7/lsbasi_part7_img01.png", 
+             caption="Interpreter Architecture: Lexer → Parser → Executor", use_column_width=True)
     
+    st.write("""
     When a user inputs a command, the **Lexer** first processes this command by breaking it down into interpretable tokens, systematically identifying keywords, numbers, and symbols.
     
     These tokens are then passed to the **Parser**, which analyzes the syntax and ensures the command adheres to language rules, constructing a structured command representation. Next, the **Executor** receives parsed commands and applies the specified sorting algorithm, organizing the inputted array in either ascending or descending order.
     
     The **Executor** also manages commands to print the most recently sorted array and supports several sorting methods including Bubble, Insertion, Quick, and Merge sorts. Error handling is distributed across each component, allowing the system to catch and describe errors in lexing, parsing, or execution with clear feedback to the user.
-    
-    The overall architecture enables the interpreter to process commands step-by-step, ensuring that each responsibility is assigned to a dedicated subsystem. This design makes the system both easy to extend (such as adding new algorithms or commands) and simple to maintain, thanks to the separation of concerns and clearly defined data flow within the interpreter.
     """)
     
+    # Section IV
     st.header("Section IV. Data Preprocessing and Cleaning")
     st.write("""
-    The Data Preprocessing and Cleaning for this Sorting Algorithm Interpreter occurs primarily within the **Lexer (Lexical Analyzer)** component. When the user inputs a command, the Lexer scans the text, ignores irrelevant whitespace, and detects invalid characters early in the process. It transforms raw input into structured tokens, which removes ambiguity and ensures only syntactically valid elements are passed on for further processing. 
-    
-    This initial step is essential for cleaning and structuring the data before parsing and execution, as any issue with unexpected characters results in an immediate error, stopping further processing and alerting the user to correct the input.
+    The Data Preprocessing and Cleaning for this Sorting Algorithm Interpreter occurs primarily within the **Lexer (Lexical Analyzer)** component. When the user inputs a command, the Lexer scans the text, ignores irrelevant whitespace, and detects invalid characters early in the process.
     """)
+    st.image("https://media.geeksforgeeks.org/wp-content/uploads/20230706113027/Lexical-Analysis.png", 
+             caption="Lexical Analysis Process", use_column_width=True)
     
+    # Section V
     st.header("Section V. Implementation Details")
     st.write("The implementation consists of three main components:")
     
     st.subheader("Lexer and Tokenizer")
+    st.image("https://miro.medium.com/v2/resize:fit:1400/1*4rJVdq8IrZxGFd-2V6uFow.png", 
+             caption="Tokenization Process", use_column_width=True)
     st.code("""
 import re
 
@@ -307,6 +323,8 @@ class Lexer:
     
     st.subheader("Parser")
     st.write("The Parser analyzes tokens and builds command structures:")
+    st.image("https://miro.medium.com/v2/resize:fit:1400/1*g2Y8rUGK1g0Tj5vHBvFJxw.png", 
+             caption="Parsing Process", use_column_width=True)
     st.code("""
 class ParserError(Exception):
     pass
@@ -326,6 +344,14 @@ class Parser:
     
     st.subheader("Executor")
     st.write("The Executor runs the sorting algorithms:")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif", 
+                 caption="Bubble Sort", use_column_width=True)
+    with col2:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif", 
+                 caption="Insertion Sort", use_column_width=True)
+    
     st.code("""
 class Executor:
     def __init__(self):
@@ -341,8 +367,19 @@ class Executor:
             self.last_sorted_array = sorted_array
     """, language="python")
     
+    col3, col4 = st.columns(2)
+    with col3:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif", 
+                 caption="Quick Sort", use_column_width=True)
+    with col4:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif", 
+                 caption="Merge Sort", use_column_width=True)
+    
+    # Section VI
     st.header("Section VI. Testing with Valid and Invalid Inputs")
     st.subheader("Valid Inputs")
+    st.image("https://www.freecodecamp.org/news/content/images/2021/06/w-q-5.png", 
+             caption="Valid Command Examples", use_column_width=True)
     st.code("""
 SORT [5, 3, 8, 1, 13, 7, -9, -31] BUBBLE BY ASC
 SORT [17, 10, 3, 9, -8, -2, -6] QUICK BY DESC
@@ -352,6 +389,8 @@ SORT [4, -3, 5, 6, -9, 2, 7, 10, -15] MERGE BY DESC
     """)
     
     st.subheader("Invalid Inputs")
+    st.image("https://miro.medium.com/v2/resize:fit:1400/1*xqFqTkqxG7aJvmZf6cFhVQ.png", 
+             caption="Error Handling in Interpreters", use_column_width=True)
     st.code("""
 SORT [5, 3, 8, 1, 13, 7, -9, -31,] BUBBLE BY ASC  # Trailing comma
 SORT [5, 3, 8, 1, 13. 7, -9, -31] BUBBLE BY DESC  # Invalid character
@@ -359,10 +398,15 @@ SORT [17, 10, 3, 9, -8, -2, -6] BY DESC          # Missing algorithm
 [2, -4, 1, -12, 3, 8, -9, 12] INSERTION BY ASC   # Missing SORT keyword
     """)
     
+    # Section VII
     st.header("Section VII. Extensions and Additional Features")
     st.write("""
     In order to better display how our project works, we implemented a UI through the use of **Streamlit** to enable user-input and interactive visualization. 
+    """)
+    st.image("https://docs.streamlit.io/images/streamlit-community-cloud/deploy-an-app.png", 
+             caption="Streamlit Interactive Dashboard", use_column_width=True)
     
+    st.write("""
     The Streamlit interface provides:
     - Interactive input fields for array data
     - Algorithm selection dropdown
@@ -371,10 +415,15 @@ SORT [17, 10, 3, 9, -8, -2, -6] BY DESC          # Missing algorithm
     - Color-coded legend for value tracking
     """)
     
+    # Section VIII
     st.header("Section VIII. Insights and Conclusions")
     st.write("""
     This Sorting Algorithm Interpreter project successfully demonstrates the fundamental principles of programming language design and implementation. Through the development of lexer, parser, and executor components, we gained hands-on experience with:
+    """)
+    st.image("https://miro.medium.com/v2/resize:fit:1400/1*cG6U1qstYDijh9bPL42e-Q.png", 
+             caption="Compiler/Interpreter Design Principles", use_column_width=True)
     
+    st.markdown("""
     - **Lexical Analysis:** Breaking down user input into tokens
     - **Syntax Parsing:** Validating command structure
     - **Algorithm Execution:** Implementing and comparing sorting algorithms
@@ -384,7 +433,10 @@ SORT [17, 10, 3, 9, -8, -2, -6] BY DESC          # Missing algorithm
     The modular design allows for easy extension with new algorithms and features, while the Streamlit interface makes the interpreter accessible and educational for users learning about sorting algorithms.
     """)
     
+    # Section IX
     st.header("Section IX. References")
+    st.image("https://images-na.ssl-images-amazon.com/images/I/51aflXy4WQL._SX379_BO1,204,203,200_.jpg", 
+             caption="Compilers: Principles, Techniques, and Tools", width=300)
     st.markdown("""
     - Aho, A. V., Lam, M. S., Sethi, R., & Ullman, J. D. (2006). *Compilers: Principles, Techniques, and Tools* (2nd ed.). Addison-Wesley.
     - Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). *Introduction to Algorithms* (3rd ed.). MIT Press.
