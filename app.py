@@ -223,6 +223,175 @@ if st.session_state.page == "Home Page":
     """)
     st.image("https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif", caption="Merge Sort Example", use_container_width=True)
 
+elif st.session_state.page == "Details":
+    st.title("Project Details")
+    
+    st.header("Section I. Introduction")
+    st.write("""
+    This project implements a Sorting Algorithm Interpreter, which reads user commands related to sorting arrays using different algorithms and executes them immediately. The interpreter demonstrates key programming language principles such as lexical analysis, parsing, and execution.
+    """)
+    
+    st.header("Section II. Description of the Input Language")
+    st.subheader("Tokens")
+    st.markdown("""
+    - **Keywords:** SORT, BY, ASC, DESC, PRINT
+    - **Sorting Algorithms:** BUBBLE, INSERTION, QUICK, MERGE
+    - **Symbols:** `[`, `]`, `,`
+    - **Numbers:** Integers
+    - White spaces are ignored; invalid characters cause errors.
+    """)
+    
+    st.subheader("Grammar")
+    st.write("The interpreter processes commands with the following structure:")
+    st.code("""
+SORT [array] ALGORITHM BY ORDER
+PRINT
+    """)
+    
+    st.header("Section III. System Design")
+    st.write("""
+    The system design of the Sorting Algorithm Interpreter emphasizes modularity and clarity throughout its structure. The interpreter consists of four primary components: **Lexer**, **Parser**, **Executor**, and an **Integrative Interface**.
+    
+    When a user inputs a command, the **Lexer** first processes this command by breaking it down into interpretable tokens, systematically identifying keywords, numbers, and symbols.
+    
+    These tokens are then passed to the **Parser**, which analyzes the syntax and ensures the command adheres to language rules, constructing a structured command representation. Next, the **Executor** receives parsed commands and applies the specified sorting algorithm, organizing the inputted array in either ascending or descending order.
+    
+    The **Executor** also manages commands to print the most recently sorted array and supports several sorting methods including Bubble, Insertion, Quick, and Merge sorts. Error handling is distributed across each component, allowing the system to catch and describe errors in lexing, parsing, or execution with clear feedback to the user.
+    
+    The overall architecture enables the interpreter to process commands step-by-step, ensuring that each responsibility is assigned to a dedicated subsystem. This design makes the system both easy to extend (such as adding new algorithms or commands) and simple to maintain, thanks to the separation of concerns and clearly defined data flow within the interpreter.
+    """)
+    
+    st.header("Section IV. Data Preprocessing and Cleaning")
+    st.write("""
+    The Data Preprocessing and Cleaning for this Sorting Algorithm Interpreter occurs primarily within the **Lexer (Lexical Analyzer)** component. When the user inputs a command, the Lexer scans the text, ignores irrelevant whitespace, and detects invalid characters early in the process. It transforms raw input into structured tokens, which removes ambiguity and ensures only syntactically valid elements are passed on for further processing. 
+    
+    This initial step is essential for cleaning and structuring the data before parsing and execution, as any issue with unexpected characters results in an immediate error, stopping further processing and alerting the user to correct the input.
+    """)
+    
+    st.header("Section V. Implementation Details")
+    st.write("The implementation consists of three main components:")
+    
+    st.subheader("Lexer and Tokenizer")
+    st.code("""
+import re
+
+class LexerError(Exception):
+    pass
+
+class Token:
+    def __init__(self, type, value, position):
+        self.type = type
+        self.value = value
+        self.position = position
+
+class Lexer:
+    token_specification = [
+        ('SORT', r'SORT'),
+        ('BY', r'BY'),
+        ('ASC', r'ASC'),
+        ('DESC', r'DESC'),
+        ('PRINT', r'PRINT'),
+        ('BUBBLE', r'BUBBLE'),
+        ('INSERTION', r'INSERTION'),
+        ('QUICK', r'QUICK'),
+        ('MERGE', r'MERGE'),
+        ('NUMBER', r'\\d+'),
+        ('LBRACKET', r'\\['),
+        ('RBRACKET', r'\\]'),
+        ('COMMA', r','),
+        ('MINUS', r'-'),
+        ('SKIP', r'[ \\t]+'),
+        ('MISMATCH', r'.'),
+    ]
+    """, language="python")
+    
+    st.subheader("Parser")
+    st.write("The Parser analyzes tokens and builds command structures:")
+    st.code("""
+class ParserError(Exception):
+    pass
+
+class Parser:
+    def __init__(self, tokens):
+        self.tokens = tokens
+        self.pos = 0
+        self.current_token = self.tokens[self.pos] if tokens else None
+
+    def parse(self):
+        if self.current_token.type == 'SORT':
+            return self.parse_sort_command()
+        elif self.current_token.type == 'PRINT':
+            return {'command': 'PRINT'}
+    """, language="python")
+    
+    st.subheader("Executor")
+    st.write("The Executor runs the sorting algorithms:")
+    st.code("""
+class Executor:
+    def __init__(self):
+        self.last_sorted_array = []
+
+    def execute(self, command):
+        if command['command'] == 'SORT':
+            sorted_array = self.sort_array(
+                command['array'], 
+                command['algorithm'], 
+                command['order']
+            )
+            self.last_sorted_array = sorted_array
+    """, language="python")
+    
+    st.header("Section VI. Testing with Valid and Invalid Inputs")
+    st.subheader("Valid Inputs")
+    st.code("""
+SORT [5, 3, 8, 1, 13, 7, -9, -31] BUBBLE BY ASC
+SORT [17, 10, 3, 9, -8, -2, -6] QUICK BY DESC
+PRINT
+SORT [2, -4, 1, -12, 3, 8, -9, 12] INSERTION BY ASC
+SORT [4, -3, 5, 6, -9, 2, 7, 10, -15] MERGE BY DESC
+    """)
+    
+    st.subheader("Invalid Inputs")
+    st.code("""
+SORT [5, 3, 8, 1, 13, 7, -9, -31,] BUBBLE BY ASC  # Trailing comma
+SORT [5, 3, 8, 1, 13. 7, -9, -31] BUBBLE BY DESC  # Invalid character
+SORT [17, 10, 3, 9, -8, -2, -6] BY DESC          # Missing algorithm
+[2, -4, 1, -12, 3, 8, -9, 12] INSERTION BY ASC   # Missing SORT keyword
+    """)
+    
+    st.header("Section VII. Extensions and Additional Features")
+    st.write("""
+    In order to better display how our project works, we implemented a UI through the use of **Streamlit** to enable user-input and interactive visualization. 
+    
+    The Streamlit interface provides:
+    - Interactive input fields for array data
+    - Algorithm selection dropdown
+    - Order selection (Ascending/Descending)
+    - Real-time visualization of sorting steps
+    - Color-coded legend for value tracking
+    """)
+    
+    st.header("Section VIII. Insights and Conclusions")
+    st.write("""
+    This Sorting Algorithm Interpreter project successfully demonstrates the fundamental principles of programming language design and implementation. Through the development of lexer, parser, and executor components, we gained hands-on experience with:
+    
+    - **Lexical Analysis:** Breaking down user input into tokens
+    - **Syntax Parsing:** Validating command structure
+    - **Algorithm Execution:** Implementing and comparing sorting algorithms
+    - **Error Handling:** Providing clear feedback for invalid inputs
+    - **Visualization:** Creating intuitive representations of algorithm behavior
+    
+    The modular design allows for easy extension with new algorithms and features, while the Streamlit interface makes the interpreter accessible and educational for users learning about sorting algorithms.
+    """)
+    
+    st.header("Section IX. References")
+    st.markdown("""
+    - Aho, A. V., Lam, M. S., Sethi, R., & Ullman, J. D. (2006). *Compilers: Principles, Techniques, and Tools* (2nd ed.). Addison-Wesley.
+    - Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). *Introduction to Algorithms* (3rd ed.). MIT Press.
+    - Python Software Foundation. (2024). *Python Documentation*. https://docs.python.org/
+    - Streamlit Inc. (2024). *Streamlit Documentation*. https://docs.streamlit.io/
+    """)
+
 elif st.session_state.page == "Visualization":
     st.title("Sorting Algorithm Interpreter — Enhanced Visualizations")
     st.write("""
