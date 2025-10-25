@@ -402,9 +402,7 @@ SORT [17, 10, 3, 9, -8, -2, -6] BY DESC          # Missing algorithm
     st.write("""
     In order to better display how our project works, we implemented a UI through the use of **Streamlit** to enable user-input and interactive visualization. 
     """)
-    st.image("https://docs.streamlit.io/images/streamlit-community-cloud/deploy-an-app.png", 
-             caption="Streamlit Interactive Dashboard", use_container_width=True)
-    
+
     st.write("""
     The Streamlit interface provides:
     - Interactive input fields for array data
