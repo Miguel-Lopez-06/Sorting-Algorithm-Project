@@ -248,7 +248,7 @@ elif st.session_state.page == "Details":
     col1, col2 = st.columns(2)
     with col1:
         st.image("https://media.geeksforgeeks.org/wp-content/uploads/20230706112910/Tokens-in-C.png", 
-                 caption="Lexical Tokens Example", use_column_width=True)
+                 caption="Lexical Tokens Example", use_container_width=True)
     with col2:
         st.subheader("Grammar")
         st.write("The interpreter processes commands with the following structure:")
@@ -263,7 +263,7 @@ PRINT
     The system design of the Sorting Algorithm Interpreter emphasizes modularity and clarity throughout its structure. The interpreter consists of four primary components: **Lexer**, **Parser**, **Executor**, and an **Integrative Interface**.
     """)
     st.image("https://ruslanspivak.com/lsbasi-part7/lsbasi_part7_img01.png", 
-             caption="Interpreter Architecture: Lexer → Parser → Executor", use_column_width=True)
+             caption="Interpreter Architecture: Lexer → Parser → Executor", use_container_width=True)
     
     st.write("""
     When a user inputs a command, the **Lexer** first processes this command by breaking it down into interpretable tokens, systematically identifying keywords, numbers, and symbols.
@@ -279,7 +279,7 @@ PRINT
     The Data Preprocessing and Cleaning for this Sorting Algorithm Interpreter occurs primarily within the **Lexer (Lexical Analyzer)** component. When the user inputs a command, the Lexer scans the text, ignores irrelevant whitespace, and detects invalid characters early in the process.
     """)
     st.image("https://media.geeksforgeeks.org/wp-content/uploads/20230706113027/Lexical-Analysis.png", 
-             caption="Lexical Analysis Process", use_column_width=True)
+             caption="Lexical Analysis Process", use_container_width=True)
     
     # Section V
     st.header("Section V. Implementation Details")
@@ -287,7 +287,7 @@ PRINT
     
     st.subheader("Lexer and Tokenizer")
     st.image("https://miro.medium.com/v2/resize:fit:1400/1*4rJVdq8IrZxGFd-2V6uFow.png", 
-             caption="Tokenization Process", use_column_width=True)
+             caption="Tokenization Process", use_container_width=True)
     st.code("""
 import re
 
@@ -324,7 +324,7 @@ class Lexer:
     st.subheader("Parser")
     st.write("The Parser analyzes tokens and builds command structures:")
     st.image("https://miro.medium.com/v2/resize:fit:1400/1*g2Y8rUGK1g0Tj5vHBvFJxw.png", 
-             caption="Parsing Process", use_column_width=True)
+             caption="Parsing Process", use_container_width=True)
     st.code("""
 class ParserError(Exception):
     pass
@@ -347,10 +347,10 @@ class Parser:
     col1, col2 = st.columns(2)
     with col1:
         st.image("https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif", 
-                 caption="Bubble Sort", use_column_width=True)
+                 caption="Bubble Sort", use_container_width=True)
     with col2:
         st.image("https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif", 
-                 caption="Insertion Sort", use_column_width=True)
+                 caption="Insertion Sort", use_container_width=True)
     
     st.code("""
 class Executor:
@@ -370,16 +370,16 @@ class Executor:
     col3, col4 = st.columns(2)
     with col3:
         st.image("https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif", 
-                 caption="Quick Sort", use_column_width=True)
+                 caption="Quick Sort", use_container_width=True)
     with col4:
         st.image("https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif", 
-                 caption="Merge Sort", use_column_width=True)
+                 caption="Merge Sort", use_container_width=True)
     
     # Section VI
     st.header("Section VI. Testing with Valid and Invalid Inputs")
     st.subheader("Valid Inputs")
     st.image("https://www.freecodecamp.org/news/content/images/2021/06/w-q-5.png", 
-             caption="Valid Command Examples", use_column_width=True)
+             caption="Valid Command Examples", use_container_width=True)
     st.code("""
 SORT [5, 3, 8, 1, 13, 7, -9, -31] BUBBLE BY ASC
 SORT [17, 10, 3, 9, -8, -2, -6] QUICK BY DESC
@@ -390,7 +390,7 @@ SORT [4, -3, 5, 6, -9, 2, 7, 10, -15] MERGE BY DESC
     
     st.subheader("Invalid Inputs")
     st.image("https://miro.medium.com/v2/resize:fit:1400/1*xqFqTkqxG7aJvmZf6cFhVQ.png", 
-             caption="Error Handling in Interpreters", use_column_width=True)
+             caption="Error Handling in Interpreters", use_container_width=True)
     st.code("""
 SORT [5, 3, 8, 1, 13, 7, -9, -31,] BUBBLE BY ASC  # Trailing comma
 SORT [5, 3, 8, 1, 13. 7, -9, -31] BUBBLE BY DESC  # Invalid character
@@ -404,7 +404,7 @@ SORT [17, 10, 3, 9, -8, -2, -6] BY DESC          # Missing algorithm
     In order to better display how our project works, we implemented a UI through the use of **Streamlit** to enable user-input and interactive visualization. 
     """)
     st.image("https://docs.streamlit.io/images/streamlit-community-cloud/deploy-an-app.png", 
-             caption="Streamlit Interactive Dashboard", use_column_width=True)
+             caption="Streamlit Interactive Dashboard", use_container_width=True)
     
     st.write("""
     The Streamlit interface provides:
@@ -421,7 +421,7 @@ SORT [17, 10, 3, 9, -8, -2, -6] BY DESC          # Missing algorithm
     This Sorting Algorithm Interpreter project successfully demonstrates the fundamental principles of programming language design and implementation. Through the development of lexer, parser, and executor components, we gained hands-on experience with:
     """)
     st.image("https://miro.medium.com/v2/resize:fit:1400/1*cG6U1qstYDijh9bPL42e-Q.png", 
-             caption="Compiler/Interpreter Design Principles", use_column_width=True)
+             caption="Compiler/Interpreter Design Principles", use_container_width=True)
     
     st.markdown("""
     - **Lexical Analysis:** Breaking down user input into tokens
