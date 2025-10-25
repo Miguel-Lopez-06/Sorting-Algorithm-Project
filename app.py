@@ -368,7 +368,7 @@ class Executor:
     
     col3, col4 = st.columns(2)
     with col3:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif", 
+        st.image("https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim-300px.gif", 
                  caption="Quick Sort", use_container_width=True)
     with col4:
         st.image("https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif", 
