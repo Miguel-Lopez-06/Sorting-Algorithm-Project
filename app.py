@@ -245,14 +245,13 @@ elif st.session_state.page == "Details":
     - White spaces are ignored; invalid characters cause errors.
     """)
     
-    col1, col2 = st.columns(2)
-    with col1:
-        st.image("https://media.geeksforgeeks.org/wp-content/uploads/20230706112910/Tokens-in-C.png", 
+   
+    st.image("https://media.geeksforgeeks.org/wp-content/uploads/20230706112910/Tokens-in-C.png", 
                  caption="Lexical Tokens Example", use_container_width=True)
-    with col2:
-        st.subheader("Grammar")
-        st.write("The interpreter processes commands with the following structure:")
-        st.code("""
+   
+    st.subheader("Grammar")
+    st.write("The interpreter processes commands with the following structure:")
+    st.code("""
 SORT [array] ALGORITHM BY ORDER
 PRINT
         """)
