@@ -378,9 +378,10 @@ class Executor:
 
     # Section VI
     st.header("Section VI. Testing with Valid and Invalid Inputs")
-    st.subheader("Valid Inputs")
-    st.image("https://www.freecodecamp.org/news/content/images/2021/06/w-q-5.png", 
-             caption="Valid Command Examples", use_container_width=True)
+    st.subheader("Testing with Valid Inputs")
+    st.write("""
+    In order to better display how our project works, we implemented a UI through the use of **Streamlit** to enable user-input and interactive visualization. 
+    """)
     st.code("""
 SORT [5, 3, 8, 1, 13, 7, -9, -31] BUBBLE BY ASC
 SORT [17, 10, 3, 9, -8, -2, -6] QUICK BY DESC
@@ -389,9 +390,10 @@ SORT [2, -4, 1, -12, 3, 8, -9, 12] INSERTION BY ASC
 SORT [4, -3, 5, 6, -9, 2, 7, 10, -15] MERGE BY DESC
     """)
     
-    st.subheader("Invalid Inputs")
-    st.image("https://miro.medium.com/v2/resize:fit:1400/1*xqFqTkqxG7aJvmZf6cFhVQ.png", 
-             caption="Error Handling in Interpreters", use_container_width=True)
+    st.subheader("Testing with Invalid Inputs")
+    st.write("""
+    In order to better display how our project works, we implemented a UI through the use of **Streamlit** to enable user-input and interactive visualization. 
+    """)
     st.code("""
 SORT [5, 3, 8, 1, 13, 7, -9, -31,] BUBBLE BY ASC  # Trailing comma
 SORT [5, 3, 8, 1, 13. 7, -9, -31] BUBBLE BY DESC  # Invalid character
