@@ -213,7 +213,7 @@ if st.session_state.page == "Home Page":
     - **Insertion Sort** builds the sorted array one item at a time by comparing each new element to those already sorted, inserting it in the correct position.
     """)
     st.image("pics/Insertion.gif", caption="Programming Language Interpreter Flow", use_container_width=True)
-
+    
     st.subheader("Quick Sort")
     st.markdown(""" 
     - **Quick Sort** selects a pivot and partitions the array into two sub-arrays: values less than the pivot and values greater, then recursively sorts the sub-arrays.
