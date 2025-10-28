@@ -379,7 +379,9 @@ class Executor:
     # Section VI
     st.header("Section VI. Testing with Valid and Invalid Inputs")
     st.subheader("Testing with Valid Inputs")
-    st.write(""" """)
+    st.write(""" The valid input examples shown are test cases for different sorting commands in the interpreter. 
+             Each command demonstrates the syntax for sorting a specific array using a chosen algorithm 
+             (Bubble, Quick, Insertion, or Merge) and a specified order (ascending or descending). """)
     st.code("""
 SORT [5, 3, 8, 1, 13, 7, -9, -31] BUBBLE BY ASC
 SORT [17, 10, 3, 9, -8, -2, -6] QUICK BY DESC
@@ -389,7 +391,9 @@ SORT [4, -3, 5, 6, -9, 2, 7, 10, -15] MERGE BY DESC
     """)
     
     st.subheader("Testing with Invalid Inputs")
-    st.write(""" """)
+    st.write(""" These invalid inputs verify that the interpreter properly detects and rejects incorrectly formatted commands, 
+             providing clear feedback to the user to correct their input before processing. 
+             This helps ensure that only valid and purposeful commands proceed through the sorting process.""")
     st.code("""
 SORT [5, 3, 8, 1, 13, 7, -9, -31,] BUBBLE BY ASC  # Trailing comma
 SORT [5, 3, 8, 1, 13. 7, -9, -31] BUBBLE BY DESC  # Invalid character
@@ -432,8 +436,8 @@ SORT [17, 10, 3, 9, -8, -2, -6] BY DESC          # Missing algorithm
     # Section IX
     st.header("Section IX. References")
     st.markdown("""
-    - Aho, A. V., Lam, M. S., Sethi, R., & Ullman, J. D. (2006). *Compilers: Principles, Techniques, and Tools* (2nd ed.). Addison-Wesley.
-    - Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). *Introduction to Algorithms* (3rd ed.). MIT Press.
+    - Aho, A. V., Lam, M. S., Sethi, R., & Ullman, J. D. (2023). *Compilers: Principles, Techniques, and Tools* (2nd ed.). Addison-Wesley.
+    - Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). *Introduction to Algorithms* (3rd ed.). MIT Press.
     - Python Software Foundation. (2024). *Python Documentation*. https://docs.python.org/
     - Streamlit Inc. (2024). *Streamlit Documentation*. https://docs.streamlit.io/
     """)
