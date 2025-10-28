@@ -276,6 +276,10 @@ elif st.session_state.page == "Details":
     
     The **Executor** also manages commands to print the most recently sorted array and supports several sorting methods including Bubble, Insertion, Quick, and Merge sorts. Error handling is distributed across each component, allowing the system to catch and describe errors in lexing, parsing, or execution with clear feedback to the user.
     """)
+
+    st.write(""" The overall architecture enables the interpreter to process commands step-by-step, ensuring that each responsibility is assigned to a dedicated subsystem. 
+             This design makes the system both easy to extend such as adding new algorithms or commands and simple to maintain, 
+             thanks to the separation of concerns and clearly defined data flow within the interpreter.""")
     
     # Section IV
     st.header("Section IV. Data Preprocessing and Cleaning")
