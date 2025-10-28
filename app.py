@@ -351,13 +351,6 @@ class Parser:
     st.write("The Executor receives parsed commands and is in charge of actually performing computations. " \
     "It implements the core logic for the various sorting algorithms Bubble, Insertion, Quick, Merge executing them as directed on the user’s array. " \
     "It also manages application state, such as remembering the result of the last sort for PRINT commands.")
-    col1, col2 = st.columns(2)
-    with col1:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif", 
-                 caption="Bubble Sort", use_container_width=True)
-    with col2:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif", 
-                 caption="Insertion Sort", use_container_width=True)
     
     st.code("""
 class Executor:
@@ -373,15 +366,16 @@ class Executor:
             )
             self.last_sorted_array = sorted_array
     """, language="python")
+
+    col1, col2 = st.columns(2)
+    with col1:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif", 
+                 caption="Bubble Sort", use_container_width=True)
+    with col2:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif", 
+                 caption="Insertion Sort", use_container_width=True)
     
-    col3, col4 = st.columns(2)
-    with col3:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif", 
-                 caption="Quick Sort", use_container_width=True)
-    with col4:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif", 
-                 caption="Merge Sort", use_container_width=True)
-    
+
     # Section VI
     st.header("Section VI. Testing with Valid and Invalid Inputs")
     st.subheader("Valid Inputs")
