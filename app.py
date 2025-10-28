@@ -267,8 +267,7 @@ elif st.session_state.page == "Details":
     st.write("""
     The system design of the Sorting Algorithm Interpreter emphasizes modularity and clarity throughout its structure. The interpreter consists of four primary components: **Lexer**, **Parser**, **Executor**, and an **Integrative Interface**.
     """)
-    st.image("https://ruslanspivak.com/lsbasi-part7/lsbasi_part7_img01.png", 
-             caption="Interpreter Architecture: Lexer → Parser → Executor", use_container_width=True)
+    st.image("pics/III.png", caption="Programming Language Interpreter Flow", use_container_width=True)
     
     st.write("""
     When a user inputs a command, the **Lexer** first processes this command by breaking it down into interpretable tokens, systematically identifying keywords, numbers, and symbols.
