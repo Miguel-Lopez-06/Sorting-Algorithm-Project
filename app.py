@@ -253,8 +253,7 @@ elif st.session_state.page == "Details":
     st.write("The interpreter processes commands with the following structure:")
     st.code("""
     SORT [array] ALGORITHM BY ORDER
-    PRINT
-        """)
+    PRINT """)
     
     # Section III
     st.header("Section III. System Design")
