@@ -207,21 +207,24 @@ if st.session_state.page == "Home Page":
     - It continues passing through the list until no swaps are needed, so the array is sorted.
     """)
     st.image("pics/Bubble.gif", caption="Programming Language Interpreter Flow", use_container_width=True)
+
     st.subheader("Insertion Sort")
     st.markdown("""
     - **Insertion Sort** builds the sorted array one item at a time by comparing each new element to those already sorted, inserting it in the correct position.
     """)
-    st.image("pics/Bubble.gif", caption="Programming Language Interpreter Flow", use_container_width=True)
+    st.image("pics/Insertion.gif", caption="Programming Language Interpreter Flow", use_container_width=True)
+
     st.subheader("Quick Sort")
     st.markdown(""" 
     - **Quick Sort** selects a pivot and partitions the array into two sub-arrays: values less than the pivot and values greater, then recursively sorts the sub-arrays.
     """)
-    st.image("pics/Bubble.gif", caption="Programming Language Interpreter Flow", use_container_width=True)
+    st.image("pics/Quick.gif", caption="Programming Language Interpreter Flow", use_container_width=True)
+    
     st.subheader("Merge Sort")
     st.markdown("""
     - **Merge Sort** is a divide-and-conquer algorithm: it splits the list into halves, recursively sorts each, and merges them together in order.
     """)
-    st.image("pics/Bubble.gif", caption="Programming Language Interpreter Flow", use_container_width=True)
+    st.image("pics/Merge.gif", caption="Programming Language Interpreter Flow", use_container_width=True)
 
 elif st.session_state.page == "Details":
     st.title("Project Details")
