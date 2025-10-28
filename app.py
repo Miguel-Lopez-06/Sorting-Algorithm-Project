@@ -286,11 +286,13 @@ elif st.session_state.page == "Details":
     
     # Section V
     st.header("Section V. Implementation Details")
-    st.write("The implementation consists of three main components:")
+    st.write("This section provides a deeper look at the modular components that power the Sorting Algorithm Interpreter including how the code is structured, designed for extensibility, "
+    "and systematically handles user commands from input through execution and visualization.")
     
     st.subheader("Lexer and Tokenizer")
-    st.image("https://miro.medium.com/v2/resize:fit:1400/1*4rJVdq8IrZxGFd-2V6uFow.png", 
-             caption="Tokenization Process", use_container_width=True)
+    st.write("The Lexer (Lexical Analyzer) is responsible for reading the user's input command and converting it into a sequence of meaningful tokens. " \
+    "This is typically done using regular expressions to identify patterns such as keywords, numbers, symbols, and algorithm names. " \
+    "Each token is tagged with its type for easier processing downstream. For example, the string SORT [5][3][8] BUBBLE BY ASC will be split into tokens: SORT (keyword), `")
     st.code("""
 import re
 
