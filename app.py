@@ -229,7 +229,11 @@ elif st.session_state.page == "Details":
     # Section I
     st.header("Section I. Introduction")
     st.write("""
-    This project implements a Sorting Algorithm Interpreter, which reads user commands related to sorting arrays using different algorithms and executes them immediately. The interpreter demonstrates key programming language principles such as lexical analysis, parsing, and execution.
+    This project implements a Sorting Algorithm Interpreter, which reads user commands related to sorting arrays using different algorithms and executes them immediately. 
+    This project aims to bridge concepts in programming language processing, such as lexical analysis and parsing, with practical algorithm exploration. 
+    Users can interactively experiment with classic sorting algorithms, observing their behavior and internal logic step-by-step. 
+    The interpreter's design not only deepens understanding of sorting but also illustrates key aspects of language implementation and software modularity. 
+    
     """)
     st.image("https://miro.medium.com/v2/resize:fit:1400/1*yqRsMNxVL4OlhH4vNaKlSw.png", 
              caption="Programming Language Interpreter Flow", use_container_width=True)
