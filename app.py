@@ -235,16 +235,11 @@ elif st.session_state.page == "Details":
     The interpreter's design not only deepens understanding of sorting but also illustrates key aspects of language implementation and software modularity. 
     
     """)
-    
-    st.markdown(
-    """
-    <div style="display: flex; justify-content: center;">
-        <img src="pics/interpreter.png" width="400">
-    </div>
-    <div style="text-align:center; font-size: 0.95em;">Programming Language Interpreter Flow</div>
-    """,
-    unsafe_allow_html=True
-)
+
+    col1, col2, col3 = st.columns([2, 4, 2])
+with col2:
+    st.image("pics/interpreter.png", caption="Programming Language Interpreter Flow", width=400)
+
 
 
 
