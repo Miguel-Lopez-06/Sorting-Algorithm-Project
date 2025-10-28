@@ -55,9 +55,6 @@ with st.sidebar:
     st.markdown("---")
     st.write("Links:")
     st.markdown(
-        "[Github Repository](https://github.com/Miguel-Lopez-06/Sorting-Algorithm-Project.git)"
-    )
-    st.markdown(
         "[Google Colab Notebook](https://colab.research.google.com/drive/1ILGTrV-2Jzcif9-kHgX4eCTh-5_5kPhB?usp=sharing)"
     )
     st.markdown("---")
