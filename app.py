@@ -235,7 +235,7 @@ elif st.session_state.page == "Details":
     The interpreter's design not only deepens understanding of sorting but also illustrates key aspects of language implementation and software modularity. 
     
     """)
-    st.image("pics/interpreter.png", caption="Programming Language Interpreter Flow", width=450)
+    st.image("pics/interpreter.png", caption="Programming Language Interpreter Flow", width=700)
 
 
     
