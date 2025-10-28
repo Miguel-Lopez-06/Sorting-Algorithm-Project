@@ -379,9 +379,7 @@ class Executor:
     # Section VI
     st.header("Section VI. Testing with Valid and Invalid Inputs")
     st.subheader("Testing with Valid Inputs")
-    st.write("""
-    In order to better display how our project works, we implemented a UI through the use of **Streamlit** to enable user-input and interactive visualization. 
-    """)
+    st.write(""" """)
     st.code("""
 SORT [5, 3, 8, 1, 13, 7, -9, -31] BUBBLE BY ASC
 SORT [17, 10, 3, 9, -8, -2, -6] QUICK BY DESC
@@ -391,9 +389,7 @@ SORT [4, -3, 5, 6, -9, 2, 7, 10, -15] MERGE BY DESC
     """)
     
     st.subheader("Testing with Invalid Inputs")
-    st.write("""
-    In order to better display how our project works, we implemented a UI through the use of **Streamlit** to enable user-input and interactive visualization. 
-    """)
+    st.write(""" """)
     st.code("""
 SORT [5, 3, 8, 1, 13, 7, -9, -31,] BUBBLE BY ASC  # Trailing comma
 SORT [5, 3, 8, 1, 13. 7, -9, -31] BUBBLE BY DESC  # Invalid character
@@ -421,8 +417,7 @@ SORT [17, 10, 3, 9, -8, -2, -6] BY DESC          # Missing algorithm
     st.write("""
     This Sorting Algorithm Interpreter project successfully demonstrates the fundamental principles of programming language design and implementation. Through the development of lexer, parser, and executor components, we gained hands-on experience with:
     """)
-    st.image("https://miro.medium.com/v2/resize:fit:1400/1*cG6U1qstYDijh9bPL42e-Q.png", 
-             caption="Compiler/Interpreter Design Principles", use_container_width=True)
+    st.image("conclu.png", caption="Compiler/Interpreter Design Principles", use_container_width=True)
     
     st.markdown("""
     - **Lexical Analysis:** Breaking down user input into tokens
