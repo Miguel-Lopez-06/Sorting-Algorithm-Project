@@ -431,8 +431,6 @@ SORT [17, 10, 3, 9, -8, -2, -6] BY DESC          # Missing algorithm
     
     # Section IX
     st.header("Section IX. References")
-    st.image("https://images-na.ssl-images-amazon.com/images/I/51aflXy4WQL._SX379_BO1,204,203,200_.jpg", 
-             caption="Compilers: Principles, Techniques, and Tools", width=300)
     st.markdown("""
     - Aho, A. V., Lam, M. S., Sethi, R., & Ullman, J. D. (2006). *Compilers: Principles, Techniques, and Tools* (2nd ed.). Addison-Wesley.
     - Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). *Introduction to Algorithms* (3rd ed.). MIT Press.
