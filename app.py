@@ -282,8 +282,7 @@ elif st.session_state.page == "Details":
     st.write("""
     The Data Preprocessing and Cleaning for this Sorting Algorithm Interpreter occurs primarily within the **Lexer (Lexical Analyzer)** component. When the user inputs a command, the Lexer scans the text, ignores irrelevant whitespace, and detects invalid characters early in the process.
     """)
-    st.image("https://media.geeksforgeeks.org/wp-content/uploads/20230706113027/Lexical-Analysis.png", 
-             caption="Lexical Analysis Process", use_container_width=True)
+    st.image("pics/lexicalw.png", caption="Programming Language Interpreter Flow", use_container_width=True)
     
     # Section V
     st.header("Section V. Implementation Details")
