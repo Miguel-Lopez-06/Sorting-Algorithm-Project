@@ -417,7 +417,7 @@ SORT [17, 10, 3, 9, -8, -2, -6] BY DESC          # Missing algorithm
     st.write("""
     This Sorting Algorithm Interpreter project successfully demonstrates the fundamental principles of programming language design and implementation. Through the development of lexer, parser, and executor components, we gained hands-on experience with:
     """)
-    st.image("conclu.png", caption="Compiler/Interpreter Design Principles", use_container_width=True)
+    st.image("pics/conclu.png", caption="Compiler/Interpreter Design Principles", use_container_width=True)
     
     st.markdown("""
     - **Lexical Analysis:** Breaking down user input into tokens
