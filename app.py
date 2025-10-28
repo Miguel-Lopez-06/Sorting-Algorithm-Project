@@ -348,7 +348,9 @@ class Parser:
     """, language="python")
     
     st.subheader("Executor")
-    st.write("The Executor runs the sorting algorithms:")
+    st.write("The Executor receives parsed commands and is in charge of actually performing computations. " \
+    "It implements the core logic for the various sorting algorithms—Bubble, Insertion, Quick, Merge—executing them as directed on the user’s array. " \
+    "It also manages application state, such as remembering the result of the last sort for PRINT commands.")
     col1, col2 = st.columns(2)
     with col1:
         st.image("https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif", 
