@@ -238,7 +238,7 @@ elif st.session_state.page == "Details":
 
     col1, col2, col3 = st.columns([2, 4, 2])
     with col2:
-        st.image("pics/interpreter.png", caption="Programming Language Interpreter Flow", width=800)
+        st.image("pics/interpreter.png", caption="Programming Language Interpreter Flow", width=750)
 
 
 
