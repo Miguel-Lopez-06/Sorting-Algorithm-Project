@@ -206,7 +206,7 @@ if st.session_state.page == "Home Page":
     - **Bubble Sort** repeatedly steps through the list, compares adjacent items, and swaps them if they are out of order.
     - It continues passing through the list until no swaps are needed, so the array is sorted.
     """)
-    st.image("https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif", caption="Bubble Sort Example", use_container_width=True)
+    st.image("pics/Bubble.gif", caption="Programming Language Interpreter Flow", use_container_width=True)
     st.subheader("Insertion Sort")
     st.markdown("""
     - **Insertion Sort** builds the sorted array one item at a time by comparing each new element to those already sorted, inserting it in the correct position.
