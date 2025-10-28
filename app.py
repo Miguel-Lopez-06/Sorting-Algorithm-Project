@@ -239,10 +239,6 @@ elif st.session_state.page == "Details":
     st.image("pics/interpreter.png", caption="Programming Language Interpreter Flow", use_container_width=True)
 
 
-
-
-
-    
     # Section II
     st.header("Section II. Description of the Input Language")
     st.subheader("Tokens")
